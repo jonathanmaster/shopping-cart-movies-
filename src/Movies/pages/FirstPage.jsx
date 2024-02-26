@@ -1,5 +1,4 @@
 import background from '../../assets/fonde-movie.webp'
-import { Navbar } from '../../globalComponents/components/Navbar'
 
 export const FirstPage = () => {
   return (
@@ -7,8 +6,7 @@ export const FirstPage = () => {
       style={{ backgroundImage: `url(${background})` }}
       className='w-full h-screen bg-center bg-no-repeat bg-cover '
     >
-      <Navbar />
-      <div className='mt-32 text-center text-white '>
+      <div className='pt-32 text-center text-white '>
         <h1 className='font-medium text-7xl w-[1000px] mx-auto'>
           Favorite Movies, Many Languages
         </h1>

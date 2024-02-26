@@ -1,6 +1,6 @@
 const API_KEY = 'bd23ebc8b269d6891b9b30370c087898#'
 
-const fetchTrendingMovies = async (trendingType) => {
+export const fetchTrendingMovies = async (trendingType) => {
   try {
     const URL = `https://api.themoviedb.org/3/trending/movie/${trendingType}?api_key=${API_KEY}`
     const resp = await fetch(URL)
@@ -14,14 +14,18 @@ const fetchTrendingMovies = async (trendingType) => {
     }))
   } catch (error) {
     console.error('Error fetching trending movies:', error)
-    return [] // Devuelve un array vacío en caso de error
   }
 }
 
-export const dayTrending = async () => {
-  return fetchTrendingMovies('day')
-}
+export const detailsMovies = async (id) => {
+  console.log()
+  try {
+    const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
+    const resp = await fetch(URL)
+    const data = await resp.json()
 
-export const weekTrending = async () => {
-  return fetchTrendingMovies('week')
+    return data
+  } catch (error) {
+    console.log('Error fetching trending movies: ', error)
+  }
 }
