@@ -1,23 +1,21 @@
 /* eslint-disable react/prop-types */
-import { Raiting } from '../../globalComponents/components/'
+import { Raiting, Similar } from '../../globalComponents/components'
 import '../../index.css'
-import { Similar } from '../../globalComponents/components'
 
-export const DayInfoCard = ({ info }) => {
-  console.log(info.id)
+export const DataMovie = ({ info }) => {
   return (
     <main
       style={{
         backgroundImage: `url(${`https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces${info.backdrop_path}`})`,
       }}
-      className='relative w-full h-screen bg-center bg-no-repeat fondo-daycard'
+      className='relative w-full min-h-screen bg-center bg-no-repeat fondo-daycard'
     >
       <aside className='relative flex p-5 text-white gap-x-10'>
         <div>
           <img
             src={`https://media.themoviedb.org/t/p/w220_and_h330_face${info.poster_path}`}
             alt={info.title}
-            className='rounded h-96 '
+            className='rounded h-96 w-[450px]'
           />
           <div className='flex justify-center mt-3 gap-x-2'>
             <svg

@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { fetchTrendingMovies } from '../helpers/Data'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { fetchTrendingMovies } from '../../helpers/Data'
 
 import '../../index.css'
 

@@ -18,7 +18,6 @@ export const fetchTrendingMovies = async (trendingType) => {
 }
 
 export const detailsMovies = async (id) => {
-  console.log()
   try {
     const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
     const resp = await fetch(URL)
@@ -27,5 +26,19 @@ export const detailsMovies = async (id) => {
     return data
   } catch (error) {
     console.log('Error fetching trending movies: ', error)
+  }
+}
+
+export const similarMovies = async (id) => {
+  // console.log(id)
+  try {
+    const URL = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}`
+    const resp = await fetch(URL)
+    const { results } = await resp.json()
+
+    // console.log(results)
+    return results
+  } catch (error) {
+    console.log(error)
   }
 }

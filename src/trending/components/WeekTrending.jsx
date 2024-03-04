@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { fetchTrendingMovies } from '../helpers/Data'
 import '../../index.css'
 import { Link } from 'react-router-dom'
+import { fetchTrendingMovies } from '../../helpers/Data'
 
 export const WeekTrending = () => {
   const [day, setDay] = useState([])

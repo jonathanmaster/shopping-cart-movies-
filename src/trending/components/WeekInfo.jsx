@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { detailsMovies } from '../helpers/Data'
+import { detailsMovies } from '../../helpers/Data'
 
 export const DayInfo = () => {
   const navigate = useNavigate()

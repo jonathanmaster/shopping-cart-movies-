@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { DayInfoCard } from './DayInfoCard'
+import { DataMovie } from './DataMovie'
 import { detailsMovies } from '../../helpers/Data'
 
-export const DayInfo = () => {
+export const InfoMovies = () => {
   const navigate = useNavigate()
 
-  const { dayId } = useParams()
-  const [day, setDay] = useState([])
+  const { id } = useParams()
+
+  const [movie, setMovie] = useState([])
 
   useEffect(() => {
     const fetchDay = async () => {
-      const idNumber = Number(dayId)
+      const idNumber = Number(id)
       const result = await detailsMovies(idNumber)
-      setDay(result)
+      setMovie(result)
 
       // Si result es null o undefined, redirige al usuario a la página de inicio
       if (!result) {
@@ -22,12 +23,7 @@ export const DayInfo = () => {
     }
 
     fetchDay()
-  }, [dayId, navigate])
+  }, [id, navigate])
 
-  return (
-    <>
-      {/* <Navbar /> */}
-      <DayInfoCard info={day} />
-    </>
-  )
+  return <DataMovie info={movie} />
 }

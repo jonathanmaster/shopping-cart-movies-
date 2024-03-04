@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scrollbar-color: rgb(247, 75, 8) #000000;
+  scrollbar-width: thin;
+}
+
 .scrollBar {
   scrollbar-width: thin;
-  scrollbar-color: rgb(247, 75, 8) #fdfdfd;
+  scrollbar-color: rgb(247, 75, 8) #fdfdfd00;
+}
+
+.fondo-daycard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
 }
